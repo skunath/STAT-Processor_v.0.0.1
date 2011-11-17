@@ -187,7 +187,7 @@ public class Analyzer {
 			while (j <= lengthy) {
 				if (matrix[i][j] >= endscore) {
 					answerstack = new Stack<String>();
-					alignment = this.retrieve(x, y, i, j, 0.0, matrix, endscore, answerstack);
+					//alignment = this.retrieve(x, y, i, j, 0.0, matrix, endscore, answerstack);
 				}
 				j += 1;
 			}
@@ -500,7 +500,7 @@ public class Analyzer {
 					alignstring = x.substring(i-1,i) + " --- " + y.substring(j-1,j);
 					
 					answerstack.push(alignstring);
-					return this.retrieve(x,y,i-1,j-1,score + this.sub(x.substring(i-1,i), y.substring(j-1,j)), matrix, t, answerstack);
+					//return this.retrieve(x,y,i-1,j-1,score + this.sub(x.substring(i-1,i), y.substring(j-1,j)), matrix, t, answerstack);
 				}
 			
 			
@@ -520,7 +520,7 @@ public class Analyzer {
 					alignstring = " --- " + y.substring(j-1,j);
 					
 					answerstack.push(alignstring);
-					return this.retrieve(x, y, i, j-1, score + this.skip(y.substring(j-1,j)), matrix, t, answerstack );			
+				//	return this.retrieve(x, y, i, j-1, score + this.skip(y.substring(j-1,j)), matrix, t, answerstack );			
 				}
 
 			
@@ -537,7 +537,7 @@ public class Analyzer {
 					alignstring = x.substring(i-1,i) + " --- " + y.substring(j-1-1,j-1) + " " + y.substring(j-1,j);
 					
 					answerstack.push(alignstring);
-					return this.retrieve(x, y, i-1, j-2, score + this.exp(x.substring(i-1,i), y.substring(j-1-1,j-1), y.substring(j-1,j)), matrix, t, answerstack );			
+					//return this.retrieve(x, y, i-1, j-2, score + this.exp(x.substring(i-1,i), y.substring(j-1-1,j-1), y.substring(j-1,j)), matrix, t, answerstack );			
 				}
 
 				
@@ -554,7 +554,7 @@ public class Analyzer {
 					//alignstring = "Align " + x.substring(i-1,i) + " with null";
 					alignstring = x.substring(i-1,i) + " --- ";
 					answerstack.push(alignstring);
-					return this.retrieve(x, y, i-1, j, score + this.skip(x.substring(i-1,i)), matrix, t, answerstack );			
+					//return this.retrieve(x, y, i-1, j, score + this.skip(x.substring(i-1,i)), matrix, t, answerstack );			
 				}
 
 			
@@ -570,7 +570,7 @@ public class Analyzer {
 					//alignstring = "Align " + x.substring(i-1-1,i-1) + " " + x.substring(i-1,i) + " with " + y.substring(j-1,j);
 					alignstring = x.substring(i-1-1,i-1) + " " + x.substring(i-1,i) + " --- " + y.substring(j-1,j);
 					answerstack.push(alignstring);
-					return this.retrieve(x, y, i-2, j-1, score + this.exp(y.substring(j-1,j), x.substring(i-1-1, i-1), x.substring(i-1, i)), matrix, t, answerstack );			
+					//return this.retrieve(x, y, i-2, j-1, score + this.exp(y.substring(j-1,j), x.substring(i-1-1, i-1), x.substring(i-1, i)), matrix, t, answerstack );			
 				}
 
 			
